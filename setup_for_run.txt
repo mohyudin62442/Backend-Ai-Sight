@@ -1,0 +1,18 @@
+# Add PostgreSQL 16 to PATH
+$env:PATH += ";C:\Program Files\PostgreSQL\16\bin"
+
+# Make it permanent
+[Environment]::SetEnvironmentVariable("PATH", $env:PATH, [EnvironmentVariableTarget]::User)
+
+# Test if psql comman
+
+$env:DATABASE_URL = "postgresql://aioptimization:ce0e24cd274b48618537df2b8de6e47b@localhost:5432/postgres"
+
+$env:ANTHROPIC_API_KEY="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"
+
+
+uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+
+
+$env:DATABASE_URL = "postgresql://aioptimization:password123@localhost:5432/aioptimization"
+
